@@ -10,6 +10,13 @@
         echo "    <body bgcolor='#E0F2F1' text='#0B3B39'>";
         echo "        <img src='nuk2.jpg'>";
         echo "        <h1>😎 迎新報名</h1>";
+
+        if (isset($_SESSION["adminLogin"])) {
+            echo "        <h3>🖥️歡迎Admin</h3>";
+        } else if (isset($_SESSION["userLogin"])) {
+            echo "        <h3>🙍‍♀️歡迎User</h3>";
+        }
+
         echo "        <a href='logout.php'>Log out</a>";
         echo "        <table border='1'>";
         echo "            <thead>";

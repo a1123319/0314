@@ -9,10 +9,16 @@
 
     <?php
         if (isset($_COOKIE["username"])) {
-            echo "Welcome back, " . $_COOKIE["username"];
+            echo "<h3>Welcome back, " . $_COOKIE["username"] . "</h3>";
         }
-    ?>
 
+        echo "Admin帳號： admin<br>";
+        echo "Admin密碼： admin<br>";
+        echo "User帳號： user<br>";
+        echo "User密碼： user<br>";
+        echo "<br>";
+    ?>
+    
     <form action="logincheck.php" method="post">
         Username <input type="text" name="username"><br>
         Password <input type="password" name="password"><br>

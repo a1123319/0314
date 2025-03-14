@@ -8,7 +8,13 @@
         echo "        <meta charset='utf-8'>";
         echo "    </head>";
         echo "    <body bgcolor='#F2D6EF' text='#2C0728'>";
-        echo "        <h1>報名成功！</h1>";
+
+        if (isset($_SESSION["adminLogin"])) {
+            echo "        <h1>🖥️Admin報名成功！</h1>";
+        } else if (isset($_SESSION["userLogin"])) {
+            echo "        <h1>🙍‍♀️User報名成功！</h1>";
+        }
+
         echo "        以下是你的報名資訊<br>";
         echo "        <?php";
         echo "場次：" . $_POST["place"] . "<br>";

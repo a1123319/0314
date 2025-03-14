@@ -9,16 +9,23 @@
 </head>
 <body>
     <?php
-        $name = "a1123319";
-        $password = "a1123319";
+        $adminName = "admin";
+        $adminPassword = "admin";
+        $userName = "user";
+        $userPassword = "user";
 
         $fetchName = $_POST["username"];
         $fetchPassword = $_POST["password"];
 
-        if ($name == $fetchName && $password == $fetchPassword) {
-            echo "Login succeeded";
+        if ($adminName == $fetchName && $adminPassword == $fetchPassword) {
             $_SESSION["check"] = 1;
-            setcookie("username", $name, strtotime("+10 seconds", time()));
+            $_SESSION["adminLogin"] = 1;
+            setcookie("username", $fetchName, strtotime("+10 seconds", time()));
+            header("Location:form.php");
+        } else if ($userName == $fetchName && $userPassword == $fetchPassword) {
+            $_SESSION["check"] = 1;
+            $_SESSION["userLogin"] = 1;
+            setcookie("username", $fetchName, strtotime("+10 seconds", time()));
             header("Location:form.php");
         } else {
             echo "Login failed";
